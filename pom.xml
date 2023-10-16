@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (C) 2023 Spanish National Bioinformatics Institute (INB) and
+  Barcelona Supercomputing Center
+
+  Modifications to the initial code base are copyright of their respective
+  authors, or their employers as appropriate.
+ 
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public
+  License along with this library; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+  MA 02110-1301  USA
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>es.bsc.inb.ga4gh</groupId>
+    <artifactId>beacon-v2-api</artifactId>
+    <version>2.0.4</version>
+    <packaging>pom</packaging>
+
+    <description>
+        Beacon v2 API Java interfaces and model classes. 
+    </description>
+
+    <organization>
+        <name>Barcelona Supercomputing Center</name>
+        <url>https://www.bsc.es/</url>
+    </organization>
+
+    <licenses>
+      <license>
+        <name>LGPL-2.1-or-later</name>
+        <url>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</url>
+        <distribution>repo</distribution>
+      </license>
+    </licenses>
+
+    <developers>
+        <developer>
+          <id>redmitry</id>
+          <name>Dmitry Repchevsky</name>
+          <email>redmitry@list.ru</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>beacon-framework</module>
+        <module>beacon-data-model</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <jakarta.json.version>2.1.1</jakarta.json.version>
+        <jakarta.json.bind.version>3.0.0</jakarta.json.bind.version>
+        <org.eclipse.yasson.version>3.0.3</org.eclipse.yasson.version>
+        <junit.version>4.13.2</junit.version>
+
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>gitlab-bsc-maven</id>
+            <name>BSC Apache Maven Repository</name>
+            <url>https://inb.bsc.es/maven</url>
+        </repository>
+    </distributionManagement>
+
+</project>
