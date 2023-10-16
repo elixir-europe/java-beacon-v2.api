@@ -70,6 +70,14 @@
 
     </properties>
 
+    <repositories>
+        <repository>
+            <id>gitlab-bsc-maven</id>
+            <name>BSC Apache Maven Repository</name>
+            <url>https://inb.bsc.es/maven</url>
+        </repository>
+    </repositories>
+
     <distributionManagement>
         <repository>
             <id>gitlab-bsc-maven</id>
