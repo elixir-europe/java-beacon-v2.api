@@ -23,13 +23,18 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>es.bsc.inb.ga4gh</groupId>
-    <artifactId>beacon-v2-api</artifactId>
-    <version>2.0.4</version>
-    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>es.bsc.inb.ga4gh</groupId>
+        <artifactId>beacon-v2-api</artifactId>
+        <version>2.0.4</version>
+    </parent>
+
+    <artifactId>beacon-model</artifactId>
+    <packaging>jar</packaging>
 
     <description>
-        Beacon v2 API Java interfaces and model classes. 
+        Beacon Java Data Model version 2.0.0
     </description>
 
     <organization>
@@ -53,38 +58,48 @@
         </developer>
     </developers>
 
-    <modules>
-        <module>beacon-framework</module>
-        <module>beacon-data-model</module>
-        <module>beacon-model</module>
-    </modules>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-
-        <jakarta.json.version>2.1.1</jakarta.json.version>
-        <jakarta.json.bind.version>3.0.0</jakarta.json.bind.version>
-        <org.eclipse.yasson.version>3.0.3</org.eclipse.yasson.version>
-        <junit.version>4.13.2</junit.version>
-
+        
+        <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
     </properties>
+    
+    <dependencies>
 
-    <repositories>
-        <repository>
-            <id>gitlab-bsc-maven</id>
-            <name>BSC Apache Maven Repository</name>
-            <url>https://inb.bsc.es/maven</url>
-        </repository>
-    </repositories>
+        <dependency>        
+            <groupId>es.bsc.inb.ga4gh</groupId>
+            <artifactId>beacon-framework</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        
+        <dependency>        
+            <groupId>es.bsc.inb.ga4gh</groupId>
+            <artifactId>beacon-data-model</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>${jakarta.ws.rs-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
-    <distributionManagement>
-        <repository>
-            <id>gitlab-bsc-maven</id>
-            <name>BSC Apache Maven Repository</name>
-            <url>https://inb.bsc.es/maven</url>
-        </repository>
-    </distributionManagement>
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <version>${jakarta.json.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.json.bind</groupId>
+            <artifactId>jakarta.json.bind-api</artifactId>
+            <version>${jakarta.json.bind.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+    </dependencies>
 
 </project>
