@@ -77,6 +77,18 @@
             <name>BSC Apache Maven Repository</name>
             <url>https://inb.bsc.es/maven</url>
         </repository>
+
+        <repository>
+            <id>jakarta.oss.sonatype.org-snapshot</id>
+            <url>https://jakarta.oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
     </repositories>
 
     <distributionManagement>
