@@ -26,6 +26,7 @@
 package es.bsc.inb.ga4gh.beacon.framework.model.v200.responses;
 
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.common.SchemaPerEntity;
+import jakarta.json.bind.annotation.JsonbProperty;
 import java.util.List;
 
 /**
@@ -36,6 +37,8 @@ public class BeaconInformationalResponseMeta {
     
     private String beacon_id;
     private String api_version;
+    private Boolean aggregated ;
+    
     private List<SchemaPerEntity> returned_schemas;
 
     public String getBeaconId() {
@@ -52,6 +55,16 @@ public class BeaconInformationalResponseMeta {
     
     public void setApiVersion(String api_version) {
         this.api_version = api_version;
+    }
+
+    @JsonbProperty("isAggregated")
+    public Boolean getAggregated() {
+        return aggregated;
+    }
+    
+    @JsonbProperty("isAggregated")
+    public void setAggregated(Boolean aggregated) {
+        this.aggregated = aggregated;
     }
     
     public List<SchemaPerEntity> getReturnedSchemas() {
