@@ -35,6 +35,7 @@ public class AlphanumericFilter implements BeaconQueryFilter {
     private String operator;
     private String value;
     private String scope;
+    private String logic;
 
     public AlphanumericFilter() {}
     
@@ -73,6 +74,14 @@ public class AlphanumericFilter implements BeaconQueryFilter {
 
     public void setScope(String scope) {
         this.scope = scope;
+    }
+
+    public String getLogic() {
+        return logic;
+    }
+
+    public void setLogic(String logic) {
+        this.logic = logic;
     }
     
     @Override

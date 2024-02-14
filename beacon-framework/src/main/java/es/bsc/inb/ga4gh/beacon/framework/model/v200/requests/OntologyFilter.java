@@ -35,6 +35,7 @@ public class OntologyFilter implements BeaconQueryFilter {
     private Boolean include_descendant_terms;
     private String scope;
     private String similarity;
+    private String logic;
     
     public OntologyFilter() {}
     
@@ -74,6 +75,14 @@ public class OntologyFilter implements BeaconQueryFilter {
         this.similarity = similarity;
     }
     
+    public String getLogic() {
+        return logic;
+    }
+
+    public void setLogic(String logic) {
+        this.logic = logic;
+    }
+
     @Override
     public String toString() {
         return getId();
