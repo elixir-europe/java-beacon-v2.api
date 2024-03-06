@@ -39,10 +39,6 @@ import java.lang.reflect.Type;
 
 public interface BeaconQueryFilter {
     
-    default String getLogic() {
-        return null;
-    }
-    
     public static class BeaconQueryFilterDeserializer implements JsonbDeserializer<BeaconQueryFilter> {
 
         @Override
