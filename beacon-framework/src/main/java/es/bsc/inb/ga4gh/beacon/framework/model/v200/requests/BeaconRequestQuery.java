@@ -73,11 +73,11 @@ public class BeaconRequestQuery {
         this.pagination = pagination;
     }
 
-    public String getGranularity() {
+    public String getRequestedGranularity() {
         return granularity;
     }
     
-    public void setGranularity(String granularity) {
+    public void setRequestedGranularity(String granularity) {
         this.granularity = granularity;
     }
 
