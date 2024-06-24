@@ -42,10 +42,12 @@ public class OntologyFilter implements BeaconQueryFilter {
         this.id = id;
     }
     
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public void setId(String id) {
         this.id = id;
     }
@@ -73,7 +75,7 @@ public class OntologyFilter implements BeaconQueryFilter {
     public void setSimilarity(String similarity) {
         this.similarity = similarity;
     }
-
+    
     @Override
     public String toString() {
         return getId();

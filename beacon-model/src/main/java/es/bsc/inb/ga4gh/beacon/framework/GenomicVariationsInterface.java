@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2024 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -66,7 +66,8 @@ public interface GenomicVariationsInterface {
             String include_responses, long[] start, long[] end, String assembly_id,
             String reference_name, String reference_bases, String alternate_bases,
             Long variant_min_length, Long variant_max_length, String genomic_allele_short_form,
-            String gene_id, String aminoacid_change, List<BeaconQueryFilter> filters);
+            String gene_id, String aminoacid_change, List<BeaconQueryFilter> filters,
+            String filters_query);
 
     BeaconResultsetsResponse postGenomicVariationsRequest(BeaconRequestBody request);
 

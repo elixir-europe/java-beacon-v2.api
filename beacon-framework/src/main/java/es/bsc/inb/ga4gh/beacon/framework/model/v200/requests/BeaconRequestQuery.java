@@ -36,6 +36,7 @@ public class BeaconRequestQuery {
     
     private BeaconRequestParameters request_parameters;
     private List<BeaconQueryFilter> filters;
+    private String filters_logic;
     private String include_resultset_responses;
     private Pagination pagination;
     private String granularity;
@@ -55,6 +56,14 @@ public class BeaconRequestQuery {
 
     public void setFilters(List<BeaconQueryFilter> filters) {
         this.filters = filters;
+    }
+    
+    public String getFiltersLogic() {
+        return filters_logic;
+    }
+    
+    public void setFiltersLogic(String filters_logic) {
+        this.filters_logic = filters_logic;
     }
     
     public String getIncludeResultsetResponses() {

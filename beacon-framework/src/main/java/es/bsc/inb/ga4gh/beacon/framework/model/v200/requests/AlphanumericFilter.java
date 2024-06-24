@@ -44,10 +44,12 @@ public class AlphanumericFilter implements BeaconQueryFilter {
         this.value = value;
     }
     
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public void setId(String id) {
         this.id = id;
     }
@@ -74,7 +76,7 @@ public class AlphanumericFilter implements BeaconQueryFilter {
     public void setScope(String scope) {
         this.scope = scope;
     }
-    
+
     @Override
     public String toString() {
         return getId() + getOperator() + getValue();

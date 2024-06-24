@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2024 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -50,8 +50,9 @@ public interface DatasetsInterface {
      * 
      * @return 
      */
-    BeaconCollectionsResponse getDatasets(String requested_schema, Integer skip,
-            Integer limit, List<BeaconQueryFilter> filters);
+    BeaconCollectionsResponse getDatasets(
+            String requested_schema, Integer skip, Integer limit, 
+            List<BeaconQueryFilter> filters, String filters_query);
     
     /**
      * Get a list of datasets.

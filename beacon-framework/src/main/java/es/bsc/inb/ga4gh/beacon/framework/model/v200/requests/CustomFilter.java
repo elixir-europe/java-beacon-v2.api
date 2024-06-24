@@ -30,5 +30,22 @@ package es.bsc.inb.ga4gh.beacon.framework.model.v200.requests;
  */
 
 public class CustomFilter implements BeaconQueryFilter {
+    private String id;
     
+    public CustomFilter() {}
+    
+    public CustomFilter(String id) {
+        this.id = id;
+    }
+    
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }

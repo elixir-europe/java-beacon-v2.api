@@ -39,6 +39,9 @@ import java.lang.reflect.Type;
 
 public interface BeaconQueryFilter {
     
+    String getId();
+    void setId(String id);
+    
     public static class BeaconQueryFilterDeserializer implements JsonbDeserializer<BeaconQueryFilter> {
 
         @Override

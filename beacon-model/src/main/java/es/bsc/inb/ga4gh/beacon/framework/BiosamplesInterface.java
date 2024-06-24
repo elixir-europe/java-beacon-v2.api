@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2024 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -51,7 +51,8 @@ public interface BiosamplesInterface {
      */
     BeaconResultsetsResponse getBiosamples(
             String requested_schema, Integer skip, Integer limit, 
-            String include_responses, List<BeaconQueryFilter> filters);
+            String include_responses, List<BeaconQueryFilter> filters,
+            String filters_query);
 
     /**
      * Get a list of biosamples.

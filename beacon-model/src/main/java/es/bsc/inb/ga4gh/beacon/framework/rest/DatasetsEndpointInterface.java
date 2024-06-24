@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2024 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -59,6 +59,7 @@ public interface DatasetsEndpointInterface
             @QueryParam("skip") Integer skip,
             @QueryParam("limit") Integer limit,
             @QueryParam("filters") List<BeaconQueryFilter> filters,
+            @QueryParam("filters_query") String filters_query,
             @Suspended AsyncResponse asyncResponse) {
 
         final ExecutorService executor = getExecutorService();
@@ -66,7 +67,7 @@ public interface DatasetsEndpointInterface
             executor.submit(() -> {
                 try {
                     final BeaconCollectionsResponse response = getDatasets(requested_schema, 
-                            skip, limit, filters);
+                            skip, limit, filters, filters_query);
                     asyncResponse.resume(response);
                 } catch (Exception ex) {
                     asyncResponse.resume(ex);
@@ -75,7 +76,7 @@ public interface DatasetsEndpointInterface
         } else {
             try {
                 final BeaconCollectionsResponse response = getDatasets(requested_schema, 
-                        skip, limit, filters);
+                        skip, limit, filters, filters_query);
                 asyncResponse.resume(response);
             } catch (Exception ex) {
                 asyncResponse.resume(ex);

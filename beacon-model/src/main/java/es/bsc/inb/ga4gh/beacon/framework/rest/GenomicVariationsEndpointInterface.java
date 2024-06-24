@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2024 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -70,6 +70,7 @@ public interface GenomicVariationsEndpointInterface
             @QueryParam("geneid") String gene_id,
             @QueryParam("aminoacidChange") String aminoacid_change,
             @QueryParam("filters") List<BeaconQueryFilter> filters,
+            @QueryParam("filters_query") String filters_query,
             @Suspended AsyncResponse asyncResponse) {
 
         final ExecutorService executor = getExecutorService();
@@ -82,7 +83,7 @@ public interface GenomicVariationsEndpointInterface
                                 reference_name, reference_bases, alternate_bases, 
                                 variant_min_length, variant_max_length,
                                 genomic_allele_short_form, gene_id, aminoacid_change,
-                                filters);
+                                filters, filters_query);
                     asyncResponse.resume(response);
                 } catch (Exception ex) {
                     asyncResponse.resume(ex);
@@ -96,7 +97,7 @@ public interface GenomicVariationsEndpointInterface
                             reference_name, reference_bases, alternate_bases, 
                             variant_min_length, variant_max_length,
                             genomic_allele_short_form, gene_id, aminoacid_change,
-                            filters);
+                            filters, filters_query);
                 asyncResponse.resume(response);
             } catch (Exception ex) {
                 asyncResponse.resume(ex);
