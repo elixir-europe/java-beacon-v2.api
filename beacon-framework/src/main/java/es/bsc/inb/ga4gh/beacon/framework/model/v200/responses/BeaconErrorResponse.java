@@ -33,11 +33,11 @@ public class BeaconErrorResponse extends AbstractBeaconResponse {
     
     private BeaconError error;
     
-    public BeaconError getBeaconError() {
+    public BeaconError getError() {
         return error;
     }
     
-    public void setBeaconError(BeaconError error) {
+    public void setError(BeaconError error) {
         this.error = error;
     }
 }
