@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2022 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -63,6 +63,9 @@ public interface Individual
      */
     String getId();
     void setId(String id);
+
+    List<String> getCohortIds();
+    void setCohortIds(List<String> cohortIds);
 
     K getSex();
     void setSex(final K sex);

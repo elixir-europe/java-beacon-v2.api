@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2022 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -43,6 +43,9 @@ public interface Cohort
     
     String getId();
     void setId(String id);
+
+    String getDatasetId();
+    void setDatasetId(String datasetId);
 
     String getName();
     void setName(String name);

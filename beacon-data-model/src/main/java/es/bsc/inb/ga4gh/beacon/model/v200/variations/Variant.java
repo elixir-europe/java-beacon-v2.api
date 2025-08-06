@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -49,6 +49,21 @@ public interface Variant<K extends Position, L extends Identifiers,
     
     String getVariantInternalId();
     void setVariantInternalId(String variantInternalId);
+    
+    String getDatasetId();
+    void setDatasetId(String datasetId);
+
+    String getAnalysisId();
+    void setAnalysisId(String analysisId);
+
+    String getRunId();
+    void setRunId(String runId);
+
+    String getBiosampleId();
+    void setBiosampleId(String biosampleId);
+
+    String getIndividualId();
+    void setIndividualId(String individualId);
     
     String getVariantType();
     void setVariantType(String variantType);

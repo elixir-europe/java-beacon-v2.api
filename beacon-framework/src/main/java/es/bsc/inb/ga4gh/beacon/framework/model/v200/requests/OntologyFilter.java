@@ -75,7 +75,7 @@ public class OntologyFilter implements BeaconQueryFilter {
     public void setSimilarity(String similarity) {
         this.similarity = similarity;
     }
-
+    
     @Override
     public String toString() {
         return getId();
