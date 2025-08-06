@@ -61,7 +61,7 @@ public class BeaconErrorResponseProvider implements ExceptionMapper<Exception> {
             error.setErrorCode(response.getStatus());
             error.setErrorMessage(ex.getMessage());
 
-            error_response.setBeaconError(error);
+            error_response.setError(error);
 
             return Response.status(response.getStatus()).entity(error_response).build();
         }
@@ -71,7 +71,7 @@ public class BeaconErrorResponseProvider implements ExceptionMapper<Exception> {
         error.setErrorCode(HttpURLConnection.HTTP_INTERNAL_ERROR);
         error.setErrorMessage(ex.getMessage());
 
-        error_response.setBeaconError(error);
+        error_response.setError(error);
 
         return Response.status(HttpURLConnection.HTTP_INTERNAL_ERROR).entity(error_response).build();
     }
