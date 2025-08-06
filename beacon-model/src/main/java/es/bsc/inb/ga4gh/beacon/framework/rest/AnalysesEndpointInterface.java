@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -28,7 +28,6 @@ package es.bsc.inb.ga4gh.beacon.framework.rest;
 import es.bsc.inb.ga4gh.beacon.framework.AnalysesInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconFilteringTermsResponse;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
 import java.util.concurrent.ExecutorService;
 import jakarta.ws.rs.GET;
@@ -220,65 +219,6 @@ public interface AnalysesEndpointInterface
             try {
                 final BeaconResultsetsResponse response = 
                         postOneAnalysisGenomicVariantsRequest(id, request);
-                asyncResponse.resume(response);
-            } catch (Exception ex) {
-                asyncResponse.resume(ex);
-            }
-        }
-    }
-
-    @GET
-    @Path("/filtering_terms")
-    @Produces(MediaType.APPLICATION_JSON)
-    default void getAnalysesFilteringTerms(
-            @QueryParam("skip") Integer skip,
-            @QueryParam("limit") Integer limit,
-            @Suspended AsyncResponse asyncResponse) {
-
-        final ExecutorService executor = getExecutorService();
-        if (executor != null) {
-            executor.submit(() -> {
-                try {
-                    final BeaconFilteringTermsResponse response = 
-                            getAnalysesFilteringTerms(skip, limit);
-                    asyncResponse.resume(response);
-                } catch (Exception ex) {
-                    asyncResponse.resume(ex);
-                }
-            });
-        } else {
-            try {
-                final BeaconFilteringTermsResponse response = 
-                        getAnalysesFilteringTerms(skip, limit);
-                asyncResponse.resume(response);
-            } catch (Exception ex) {
-                asyncResponse.resume(ex);
-            }
-        }
-    }
-    
-    @POST
-    @Path("/filtering_terms")
-    @Produces(MediaType.APPLICATION_JSON)
-    default void postAnalysesFilteringTermsRequest(
-            BeaconRequestBody request,
-            @Suspended AsyncResponse asyncResponse) {
-
-        final ExecutorService executor = getExecutorService();
-        if (executor != null) {
-            executor.submit(() -> {
-                try {
-                    final BeaconFilteringTermsResponse response = 
-                            postAnalysesFilteringTermsRequest(request);
-                    asyncResponse.resume(response);
-                } catch (Exception ex) {
-                    asyncResponse.resume(ex);
-                }
-            });
-        } else {
-            try {
-                final BeaconFilteringTermsResponse response = 
-                        postAnalysesFilteringTermsRequest(request);
                 asyncResponse.resume(response);
             } catch (Exception ex) {
                 asyncResponse.resume(ex);
