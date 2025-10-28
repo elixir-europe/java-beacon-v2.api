@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -29,7 +29,6 @@ import es.bsc.inb.ga4gh.beacon.framework.CohortsInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconCollectionsResponse;
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconFilteringTermsResponse;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
 import java.util.concurrent.ExecutorService;
 import jakarta.ws.rs.GET;
@@ -220,67 +219,6 @@ public interface CohortsEndpointInterface
             try {
                 final BeaconResultsetsResponse response = 
                         postOneCohortIndividualsRequest(id, request);
-                asyncResponse.resume(response);
-            } catch (Exception ex) {
-                asyncResponse.resume(ex);
-            }
-        }
-    }
-    
-    @GET
-    @Path("/{id}/filtering_terms")
-    @Produces(MediaType.APPLICATION_JSON)
-    default void getOneCohortFilteringTerms(
-            @PathParam("id") String id,
-            @QueryParam("skip") Integer skip,
-            @QueryParam("limit") Integer limit,
-            @Suspended AsyncResponse asyncResponse) {
-
-        final ExecutorService executor = getExecutorService();
-        if (executor != null) {
-            executor.submit(() -> {
-                try {
-                    final BeaconFilteringTermsResponse response = 
-                            getOneCohortFilteringTerms(id, skip, limit);
-                    asyncResponse.resume(response);
-                } catch (Exception ex) {
-                    asyncResponse.resume(ex);
-                }
-            });
-        } else {
-            try {
-                final BeaconFilteringTermsResponse response = 
-                        getOneCohortFilteringTerms(id, skip, limit);
-                asyncResponse.resume(response);
-            } catch (Exception ex) {
-                asyncResponse.resume(ex);
-            }
-        }
-    }
-    
-    @POST
-    @Path("/{id}/filtering_terms")
-    @Produces(MediaType.APPLICATION_JSON)
-    default void postOneCohortFilteringTermsRequest(
-            @PathParam("id") String id,
-            BeaconRequestBody request,
-            @Suspended AsyncResponse asyncResponse) {
-
-        final ExecutorService executor = getExecutorService();
-        if (executor != null) {
-            executor.submit(() -> {
-                try {
-                    final BeaconFilteringTermsResponse response = 
-                            postOneCohortFilteringTermsRequest(id, request);
-                    asyncResponse.resume(response);
-                } catch (Exception ex) {
-                    asyncResponse.resume(ex);
-                }
-            });
-        } else {
-            try {
-                final BeaconFilteringTermsResponse response = 
-                        postOneCohortFilteringTermsRequest(id, request);
                 asyncResponse.resume(response);
             } catch (Exception ex) {
                 asyncResponse.resume(ex);

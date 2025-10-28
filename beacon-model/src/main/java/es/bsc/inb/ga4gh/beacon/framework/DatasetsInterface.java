@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -159,26 +159,4 @@ public interface DatasetsInterface {
      * @return 
      */
     BeaconFilteringTermsResponse postOneDatasetFilteringTermsRequest(BeaconRequestBody request);
-    
-    /**
-     * Get the list of filtering terms that could be used with defined dataset.
-     * 
-     * @param id
-     * @param skip
-     * @param limit
-     * 
-     * @return 
-     */
-    BeaconFilteringTermsResponse getOneDatasetFilteringTerms(String id, Integer skip, Integer limit);
-
-    
-    /**
-     * Get the list of filtering terms that could be used with defined dataset.
-     * 
-     * @param id
-     * @param request
-     * @return 
-     */
-    BeaconFilteringTermsResponse postOneDatasetFilteringTermsRequest(String id, BeaconRequestBody request);
-
 }

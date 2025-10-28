@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -27,7 +27,6 @@ package es.bsc.inb.ga4gh.beacon.framework;
 
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconFilteringTermsResponse;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
 import java.util.List;
 
@@ -99,22 +98,4 @@ public interface AnalysesInterface {
      * @return 
      */
     BeaconResultsetsResponse postOneAnalysisGenomicVariantsRequest(String id, BeaconRequestBody request);
-
-    /**
-     * Get the list of filtering terms that could be used with analyses.
-     * 
-     * @param skip
-     * @param limit
-     * @return 
-     */
-    BeaconFilteringTermsResponse getAnalysesFilteringTerms(Integer skip, Integer limit);
-    
-    /**
-     * Get the list of filtering terms that could be used with analyses.
-     * 
-     * @param request
-     * @return 
-     */
-    BeaconFilteringTermsResponse postAnalysesFilteringTermsRequest(BeaconRequestBody request);
-
 }
