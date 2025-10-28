@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -25,6 +25,7 @@
 
 package es.bsc.inb.ga4gh.beacon.model.v200.variations;
 
+import es.bsc.inb.ga4gh.vrs.model.AbstractVariation;
 import java.io.Serializable;
 import java.util.List;
 
@@ -45,10 +46,25 @@ import java.util.List;
 public interface Variant<K extends Position, L extends Identifiers, 
         M extends MolecularAttributes, N extends CaseLevelVariant,
         O extends VariantLevelData, P extends PopulationFrequencies,
-        Q extends BeaconVariation> extends Serializable {
+        Q extends AbstractVariation> extends Serializable {
     
     String getVariantInternalId();
     void setVariantInternalId(String variantInternalId);
+    
+    String getDatasetId();
+    void setDatasetId(String datasetId);
+
+    String getAnalysisId();
+    void setAnalysisId(String analysisId);
+
+    String getRunId();
+    void setRunId(String runId);
+
+    String getBiosampleId();
+    void setBiosampleId(String biosampleId);
+
+    String getIndividualId();
+    void setIndividualId(String individualId);
     
     String getVariantType();
     void setVariantType(String variantType);
