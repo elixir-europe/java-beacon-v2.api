@@ -34,5 +34,6 @@ import java.io.Serializable;
  * @author Dmitry Repchevsky
  */
 
-public interface BeaconVariation extends Serializable {
+public interface BeaconVariation extends es.bsc.inb.ga4gh.vrs.model.Variation,
+        Serializable {
 }

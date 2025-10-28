@@ -25,6 +25,7 @@
 
 package es.bsc.inb.ga4gh.beacon.model.v200.variations;
 
+import es.bsc.inb.ga4gh.vrs.model.AbstractVariation;
 import java.io.Serializable;
 import java.util.List;
 
@@ -45,7 +46,7 @@ import java.util.List;
 public interface Variant<K extends Position, L extends Identifiers, 
         M extends MolecularAttributes, N extends CaseLevelVariant,
         O extends VariantLevelData, P extends PopulationFrequencies,
-        Q extends BeaconVariation> extends Serializable {
+        Q extends AbstractVariation> extends Serializable {
     
     String getVariantInternalId();
     void setVariantInternalId(String variantInternalId);
