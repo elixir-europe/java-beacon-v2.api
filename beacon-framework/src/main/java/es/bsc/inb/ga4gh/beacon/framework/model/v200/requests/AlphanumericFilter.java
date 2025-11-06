@@ -76,7 +76,7 @@ public class AlphanumericFilter implements BeaconQueryFilter {
     public void setScope(String scope) {
         this.scope = scope;
     }
-
+    
     @Override
     public String toString() {
         return getId() + getOperator() + getValue();
