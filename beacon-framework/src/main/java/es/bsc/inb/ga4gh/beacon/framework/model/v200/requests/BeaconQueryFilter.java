@@ -37,7 +37,7 @@ import java.lang.reflect.Type;
  * @author Dmitry Repchevsky
  */
 
-public interface BeaconQueryFilter {
+public interface BeaconQueryFilter extends BeaconQueryFilterGroupInterface {
     
     String getId();
     void setId(String id);

@@ -35,7 +35,7 @@ import java.util.List;
 public class BeaconRequestQuery {
     
     private BeaconRequestParameters request_parameters;
-    private List<BeaconQueryFilter> filters;
+    private List<BeaconQueryFilterGroupInterface> filters;
     private String include_resultset_responses;
     private Pagination pagination;
     private String granularity;
@@ -49,11 +49,11 @@ public class BeaconRequestQuery {
         this.request_parameters = request_parameters;
     }
 
-    public List<BeaconQueryFilter> getFilters() {
+    public List<BeaconQueryFilterGroupInterface> getFilters() {
         return filters;
     }
 
-    public void setFilters(List<BeaconQueryFilter> filters) {
+    public void setFilters(List<BeaconQueryFilterGroupInterface> filters) {
         this.filters = filters;
     }
     

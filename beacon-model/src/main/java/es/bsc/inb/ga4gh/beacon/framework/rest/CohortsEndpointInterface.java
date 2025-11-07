@@ -26,7 +26,7 @@
 package es.bsc.inb.ga4gh.beacon.framework.rest;
 
 import es.bsc.inb.ga4gh.beacon.framework.CohortsInterface;
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
+import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilterGroupInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconCollectionsResponse;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
@@ -57,7 +57,7 @@ public interface CohortsEndpointInterface
             @QueryParam("requestedSchema") String requested_schema,
             @QueryParam("skip") Integer skip,
             @QueryParam("limit") Integer limit,
-            @QueryParam("filters") List<BeaconQueryFilter> filters,
+            @QueryParam("filters") List<BeaconQueryFilterGroupInterface> filters,
             @Suspended AsyncResponse asyncResponse) {
 
         final ExecutorService executor = getExecutorService();

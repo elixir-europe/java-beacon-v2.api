@@ -25,7 +25,7 @@
 
 package es.bsc.inb.ga4gh.beacon.framework;
 
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
+import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilterGroupInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconFilteringTermsResponse;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconCollectionsResponse;
@@ -51,7 +51,7 @@ public interface DatasetsInterface {
      * @return 
      */
     BeaconCollectionsResponse getDatasets(String requested_schema, Integer skip,
-            Integer limit, List<BeaconQueryFilter> filters);
+            Integer limit, List<BeaconQueryFilterGroupInterface> filters);
     
     /**
      * Get a list of datasets.

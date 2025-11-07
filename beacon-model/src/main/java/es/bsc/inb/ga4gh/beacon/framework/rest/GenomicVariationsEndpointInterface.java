@@ -26,7 +26,7 @@
 package es.bsc.inb.ga4gh.beacon.framework.rest;
 
 import es.bsc.inb.ga4gh.beacon.framework.GenomicVariationsInterface;
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
+import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilterGroupInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
 import java.util.concurrent.ExecutorService;
@@ -68,7 +68,7 @@ public interface GenomicVariationsEndpointInterface
             @QueryParam("genomicAlleleShortForm") String genomic_allele_short_form,
             @QueryParam("geneid") String gene_id,
             @QueryParam("aminoacidChange") String aminoacid_change,
-            @QueryParam("filters") List<BeaconQueryFilter> filters,
+            @QueryParam("filters") List<BeaconQueryFilterGroupInterface> filters,
             @Suspended AsyncResponse asyncResponse) {
 
         final ExecutorService executor = getExecutorService();
