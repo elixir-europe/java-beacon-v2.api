@@ -27,6 +27,7 @@ package es.bsc.inb.ga4gh.beacon.framework.model.v200.requests;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Logical 'OR' query filters group.
@@ -37,4 +38,9 @@ import java.util.List;
 public class BeaconQueryFilterGroup extends ArrayList<BeaconQueryFilter>
         implements List<BeaconQueryFilter>, BeaconQueryFilterGroupInterface {
     
+    @Override
+    public String toString() {
+        return this.stream().map(BeaconQueryFilterGroupInterface::toString)
+                .collect(Collectors.joining(", "));
+    }
 }
