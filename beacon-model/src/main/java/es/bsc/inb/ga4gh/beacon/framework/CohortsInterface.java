@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -25,7 +25,7 @@
 
 package es.bsc.inb.ga4gh.beacon.framework;
 
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
+import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilterGroupInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconCollectionsResponse;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
@@ -50,7 +50,7 @@ public interface CohortsInterface {
      * @return 
      */
     BeaconCollectionsResponse getCohorts(
-            String requested_schema, Integer skip, Integer limit, List<BeaconQueryFilter> filters);
+            String requested_schema, Integer skip, Integer limit, List<BeaconQueryFilterGroupInterface> filters);
     
     /**
      * Get a list of cohorts.

@@ -28,20 +28,11 @@ package es.bsc.inb.ga4gh.beacon.model.v200.common;
 import java.io.Serializable;
 
 /**
- * Definition of individual's age at onset, at sample collection time or at 
- * diagnosis of disease.
+ * Time in date-time ISO8601 string format.
  * 
  * @author Dmitry Repchevsky
  */
 
-public interface Age extends TimeElement, Serializable {
-    
-    /**
-     * Get age as a ISO8601 duration (e.g., P40Y10M05D).
-     * 
-     * @return ISO8601 duration
-     */
-    String getIso8601duration();
-    void setIso8601duration(String iso8601duration);
+public interface TimeStamp extends CharSequence, TimeElement, Serializable {
     
 }

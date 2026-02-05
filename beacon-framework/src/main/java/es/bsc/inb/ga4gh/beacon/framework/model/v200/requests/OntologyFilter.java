@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -60,10 +60,12 @@ public class OntologyFilter implements BeaconQueryFilter {
         this.include_descendant_terms = include_descendant_terms;
     }
 
+    @Override
     public String getScope() {
         return scope;
     }
 
+    @Override
     public void setScope(String scope) {
         this.scope = scope;
     }

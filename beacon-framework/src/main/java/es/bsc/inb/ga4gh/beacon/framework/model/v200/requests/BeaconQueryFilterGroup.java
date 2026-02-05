@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -23,25 +23,24 @@
  * *****************************************************************************
  */
 
-package es.bsc.inb.ga4gh.beacon.model.v200.common;
+package es.bsc.inb.ga4gh.beacon.framework.model.v200.requests;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
- * Definition of individual's age at onset, at sample collection time or at 
- * diagnosis of disease.
+ * Logical 'AND' query filters group.
  * 
  * @author Dmitry Repchevsky
  */
 
-public interface Age extends TimeElement, Serializable {
+public class BeaconQueryFilterGroup extends ArrayList<BeaconQueryFilter>
+        implements List<BeaconQueryFilter>, BeaconQueryFilterGroupInterface {
     
-    /**
-     * Get age as a ISO8601 duration (e.g., P40Y10M05D).
-     * 
-     * @return ISO8601 duration
-     */
-    String getIso8601duration();
-    void setIso8601duration(String iso8601duration);
-    
+    @Override
+    public String toString() {
+        return this.stream().map(BeaconQueryFilterGroupInterface::toString)
+                .collect(Collectors.joining(", "));
+    }
 }

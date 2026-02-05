@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2022 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -23,30 +23,14 @@
  * *****************************************************************************
  */
 
-package es.bsc.inb.ga4gh.beacon.model.v200.biosample;
+package es.bsc.inb.ga4gh.beacon.model.v200.common;
 
-import es.bsc.inb.ga4gh.beacon.model.v200.common.AgeRange;
-import es.bsc.inb.ga4gh.beacon.model.v200.common.Age;
-import es.bsc.inb.ga4gh.beacon.model.v200.common.OntologyTerm;
 import java.io.Serializable;
 
 /**
  * @author Dmitry Repchevsky
- * 
- * @param <K> Age implementation class
- * @param <L> AgeRange implementation class
- * @param <M> OntologyTerm implementation class
  */
 
-public interface TimeElement
-        <K extends Age, L extends AgeRange, M extends OntologyTerm> extends Serializable {
-    
-    K getAge();
-    void setAge(K age);
-    
-    L getAgeRange();
-    void setAgeRange(L ageRange);
-    
-    M getAgeGroup();
-    void getAgeGroup(M ageGroup);
+public interface TimeElement extends Serializable {
+
 }

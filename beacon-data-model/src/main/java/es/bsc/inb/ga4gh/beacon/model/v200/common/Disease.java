@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2022 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -34,7 +34,7 @@ import java.io.Serializable;
  * @param <L> Age implementation class
  */
 
-public interface Disease<K extends OntologyTerm, L extends Age> extends Serializable {
+public interface Disease<K extends OntologyTerm, L extends TimeElement> extends Serializable {
     
     K getDiseaseCode();
     void setDiseaseCode(K disease);

@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -26,6 +26,7 @@
 package es.bsc.inb.ga4gh.beacon.model.v200.cohort;
 
 import es.bsc.inb.ga4gh.beacon.model.v200.common.OntologyTerm;
+import jakarta.json.JsonObject;
 import java.io.Serializable;
 import java.util.List;
 
@@ -70,5 +71,8 @@ public interface Cohort
     
     List<M> getCollectionEvents();
     void setCollectionEvents(List<M> collectionEvents);
+
+    JsonObject getInfo();
+    void setInfo(JsonObject info);
 
 }

@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -25,7 +25,7 @@
 
 package es.bsc.inb.ga4gh.beacon.framework;
 
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
+import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilterGroupInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
 import java.util.List;
@@ -65,7 +65,7 @@ public interface GenomicVariationsInterface {
             String include_responses, long[] start, long[] end, String assembly_id,
             String reference_name, String reference_bases, String alternate_bases,
             Long variant_min_length, Long variant_max_length, String genomic_allele_short_form,
-            String gene_id, String aminoacid_change, List<BeaconQueryFilter> filters);
+            String gene_id, String aminoacid_change, List<BeaconQueryFilterGroupInterface> filters);
 
     BeaconResultsetsResponse postGenomicVariationsRequest(BeaconRequestBody request);
 

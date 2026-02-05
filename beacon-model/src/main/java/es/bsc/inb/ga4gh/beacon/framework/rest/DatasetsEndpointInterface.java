@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -26,7 +26,7 @@
 package es.bsc.inb.ga4gh.beacon.framework.rest;
 
 import es.bsc.inb.ga4gh.beacon.framework.DatasetsInterface;
-import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilter;
+import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconQueryFilterGroupInterface;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.requests.BeaconRequestBody;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconCollectionsResponse;
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.responses.BeaconResultsetsResponse;
@@ -57,7 +57,7 @@ public interface DatasetsEndpointInterface
             @QueryParam("requestedSchema") String requested_schema,
             @QueryParam("skip") Integer skip,
             @QueryParam("limit") Integer limit,
-            @QueryParam("filters") List<BeaconQueryFilter> filters,
+            @QueryParam("filters") List<BeaconQueryFilterGroupInterface> filters,
             @Suspended AsyncResponse asyncResponse) {
 
         final ExecutorService executor = getExecutorService();

@@ -28,20 +28,13 @@ package es.bsc.inb.ga4gh.beacon.model.v200.common;
 import java.io.Serializable;
 
 /**
- * Definition of individual's age at onset, at sample collection time or at 
- * diagnosis of disease.
+ * Definition of an ontology term that should represent a time.
  * 
  * @author Dmitry Repchevsky
  */
 
-public interface Age extends TimeElement, Serializable {
+public interface TimeTerm extends TimeElement, Serializable {
     
-    /**
-     * Get age as a ISO8601 duration (e.g., P40Y10M05D).
-     * 
-     * @return ISO8601 duration
-     */
-    String getIso8601duration();
-    void setIso8601duration(String iso8601duration);
-    
+    String getId();
+    String getLabel();
 }

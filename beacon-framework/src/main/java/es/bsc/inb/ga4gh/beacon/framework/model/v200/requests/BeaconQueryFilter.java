@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2024 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -37,10 +37,13 @@ import java.lang.reflect.Type;
  * @author Dmitry Repchevsky
  */
 
-public interface BeaconQueryFilter {
+public interface BeaconQueryFilter extends BeaconQueryFilterGroupInterface {
     
     String getId();
     void setId(String id);
+
+    String getScope();
+    void setScope(String scope);
     
     public static class BeaconQueryFilterDeserializer implements JsonbDeserializer<BeaconQueryFilter> {
 
