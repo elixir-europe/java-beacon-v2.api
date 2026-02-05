@@ -28,20 +28,31 @@ package es.bsc.inb.ga4gh.beacon.model.v200.common;
 import java.io.Serializable;
 
 /**
- * Definition of individual's age at onset, at sample collection time or at 
- * diagnosis of disease.
+ * Gestational age (or menstrual age) is the time elapsed between the first day of
+ * the last normal menstrual period and the day of delivery. The first day of 
+ * the last menstrual period occurs approximately 2 weeks before ovulation and 
+ * approximately 3 weeks before implantation of the blastocyst. 
+ * Because most women know when their last period began but not when ovulation occurred, 
+ * this definition traditionally has been used when estimating the expected date of delivery. 
+ * In contrast, chronological age (or postnatal age) is the time elapsed after birth. 
+ * Provenance: Phenopackets v2
  * 
  * @author Dmitry Repchevsky
  */
 
-public interface Age extends TimeElement, Serializable {
+public interface GestationalAge extends TimeElement, Serializable {
     
     /**
-     * Get age as a ISO8601 duration (e.g., P40Y10M05D).
+     * Get days beyond the completed weeks.
      * 
-     * @return ISO8601 duration
+     * @return days beyond the completed weeks, if available.
      */
-    String getIso8601duration();
-    void setIso8601duration(String iso8601duration);
+    Integer getDays();
     
+    /**
+     * Get completed weeks of gestation according to the above definition.
+     * 
+     * @return weeks of gestation.
+     */
+    Integer getWeeks();
 }

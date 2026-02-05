@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -91,8 +91,8 @@ public interface Individual
     List<P> getInterventionsOrProcedures();
     void setInterventionsOrProcedures(List<P> interventionsOrProcedures);
 
-    List<R> getMeasures();
-    void setMeasures(List<R> measures);
+    List<R> getMeasurements();
+    void setMeasurements(List<R> measurements);
 
     List<S> getExposures();
     void setExposures(List<S> exposures);

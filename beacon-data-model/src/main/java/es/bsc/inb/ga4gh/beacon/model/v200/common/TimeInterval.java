@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2025 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -23,24 +23,17 @@
  * *****************************************************************************
  */
 
-package es.bsc.inb.ga4gh.beacon.framework.model.v200.requests;
+package es.bsc.inb.ga4gh.beacon.model.v200.common;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.io.Serializable;
 
 /**
- * Logical 'AND' query filters group.
+ * Time interval with start and end defined as ISO8601 time stamps.
  * 
  * @author Dmitry Repchevsky
  */
-
-public class BeaconQueryFilterGroup extends ArrayList<BeaconQueryFilter>
-        implements List<BeaconQueryFilter>, BeaconQueryFilterGroupInterface {
+public interface TimeInterval extends TimeElement, Serializable {
     
-    @Override
-    public String toString() {
-        return this.stream().map(BeaconQueryFilterGroupInterface::toString)
-                .collect(Collectors.joining(", "));
-    }
+    String getStart();
+    String getEnd();
 }

@@ -33,7 +33,7 @@ import java.io.Serializable;
  * @param <K> Age implementation class
  */
 
-public interface AgeRange<K extends Age> extends Serializable {
+public interface AgeRange<K extends Age> extends TimeElement, Serializable {
     
     K getStart();
     void setStart(K age);

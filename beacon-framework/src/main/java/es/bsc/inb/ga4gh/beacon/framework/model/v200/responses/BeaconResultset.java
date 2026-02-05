@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -27,6 +27,7 @@ package es.bsc.inb.ga4gh.beacon.framework.model.v200.responses;
 
 import es.bsc.inb.ga4gh.beacon.framework.model.v200.common.Handover;
 import jakarta.json.JsonObject;
+import jakarta.json.JsonValue;
 import java.util.List;
 
 /**
@@ -42,6 +43,8 @@ public class BeaconResultset<T> {
     private String set_type;
     private Boolean exists;
     private Integer results_count;
+    private List<JsonValue> count_adjusted_to;
+    private String count_precision;
     private String beacon_id;
     private List<T> results;
     private List<Handover> results_handovers;
@@ -79,6 +82,22 @@ public class BeaconResultset<T> {
         this.results_count = results_count;
     }
 
+    public List<JsonValue> getCountAdjustedTo() {
+        return count_adjusted_to;
+    }
+    
+    public void getCountAdjustedTo(List<JsonValue> count_adjusted_to) {
+        this.count_adjusted_to = count_adjusted_to;
+    }
+    
+    public String getCountPrecision() {
+        return count_precision;
+    }
+    
+    public void setCountPrecision(String count_precision) {
+        this.count_precision = count_precision;
+    }
+    
     public String getBeaconId() {
         return beacon_id;
     }

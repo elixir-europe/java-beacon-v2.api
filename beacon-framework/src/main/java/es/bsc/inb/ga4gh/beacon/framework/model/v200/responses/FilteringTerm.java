@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2023 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -37,6 +37,7 @@ public class FilteringTerm {
     private String type;
     private String label;
     private List<String> scopes;
+    private List<String> values;
     
     public String getId() {
         return id;
@@ -68,5 +69,13 @@ public class FilteringTerm {
     
     public void setScopes(List<String> scopes) {
         this.scopes = scopes;
+    }
+    
+    public List<String> getValues() {
+        return values;
+    }
+    
+    public void setValues(List<String> values) {
+        this.values = values;
     }
 }

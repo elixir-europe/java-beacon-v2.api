@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2024 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -32,6 +32,7 @@ package es.bsc.inb.ga4gh.beacon.framework.model.v200.requests;
 public class CustomFilter implements BeaconQueryFilter {
 
     private String id;
+    private String scope;
     
     public CustomFilter() {}
     
@@ -48,4 +49,15 @@ public class CustomFilter implements BeaconQueryFilter {
     public void setId(String id) {
         this.id = id;
     }
+
+    @Override
+    public String getScope() {
+        return scope;
+    }
+
+    @Override
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
 }

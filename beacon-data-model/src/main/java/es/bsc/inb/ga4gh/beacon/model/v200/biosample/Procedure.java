@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2022 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2026 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -25,6 +25,7 @@
 
 package es.bsc.inb.ga4gh.beacon.model.v200.biosample;
 
+import es.bsc.inb.ga4gh.beacon.model.v200.common.TimeElement;
 import es.bsc.inb.ga4gh.beacon.model.v200.common.OntologyTerm;
 import java.io.Serializable;
 import java.time.ZonedDateTime;

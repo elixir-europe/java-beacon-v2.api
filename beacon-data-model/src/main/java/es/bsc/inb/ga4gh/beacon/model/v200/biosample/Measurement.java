@@ -25,6 +25,7 @@
 
 package es.bsc.inb.ga4gh.beacon.model.v200.biosample;
 
+import es.bsc.inb.ga4gh.beacon.model.v200.common.TimeElement;
 import es.bsc.inb.ga4gh.beacon.model.v200.common.OntologyTerm;
 import java.io.Serializable;
 import java.time.LocalDate;
