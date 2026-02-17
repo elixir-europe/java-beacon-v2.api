@@ -34,5 +34,5 @@ import java.io.Serializable;
  */
 
 public interface Timestamp extends CharSequence, TimeElement, Serializable {
-    
+
 }
