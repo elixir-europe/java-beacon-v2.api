@@ -33,6 +33,6 @@ import java.io.Serializable;
  * @author Dmitry Repchevsky
  */
 
-public interface TimeStamp extends CharSequence, TimeElement, Serializable {
+public interface Timestamp extends CharSequence, TimeElement, Serializable {
     
 }
